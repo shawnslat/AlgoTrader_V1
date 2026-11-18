@@ -29,3 +29,8 @@ node_modules/
 dist/
 *.backup
 *.backup_*
+
+# Personal income workbook — filled file stays local
+income_portfolio/Income_Portfolio_Tracker.xlsx
+income_portfolio/.~lock.*
+!income_portfolio/Income_Portfolio_Tracker.template.xlsx

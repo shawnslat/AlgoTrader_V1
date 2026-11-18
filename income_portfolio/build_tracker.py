@@ -1,3 +1,4 @@
+import os
 import openpyxl
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side, numbers
@@ -500,7 +501,11 @@ ws_watch.column_dimensions['G'].width = 15
 # ============================================================
 wb.move_sheet('Dashboard', offset=-3)
 
-# Save
-output_path = '/sessions/exciting-inspiring-babbage/mnt/Trader_2025/income_portfolio/Income_Portfolio_Tracker.xlsx'
+# Save a local workbook (gitignored) and a blank template under a different name.
+output_dir = os.path.dirname(os.path.abspath(__file__))
+output_path = os.path.join(output_dir, "Income_Portfolio_Tracker.xlsx")
+template_path = os.path.join(output_dir, "Income_Portfolio_Tracker.template.xlsx")
 wb.save(output_path)
-print(f'Saved to {output_path}')
+wb.save(template_path)
+print(f"Saved to {output_path}")
+print(f"Saved blank template to {template_path}")

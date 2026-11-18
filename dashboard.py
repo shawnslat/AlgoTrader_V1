@@ -1607,7 +1607,7 @@ def main():
     with tab_income:
         ip = load_income_tracker()
         if ip is None:
-            st.warning("Income Portfolio Tracker not found. Place Income_Portfolio_Tracker.xlsx in income_portfolio/")
+            st.warning("Income Portfolio Tracker not found. Copy income_portfolio/Income_Portfolio_Tracker.template.xlsx to income_portfolio/Income_Portfolio_Tracker.xlsx and fill it in.")
         elif "error" in ip:
             st.error(f"Error loading tracker: {ip['error']}")
         else:
